@@ -3,9 +3,6 @@
 @implementation NSString (Transform)
 
 -(NSString*)transform {
-    //self = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    //self = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    
     bool isPangram = [self isPangram];
     NSPredicate *noEmptyStrings = [NSPredicate predicateWithFormat:@"SELF != ''"];
     NSArray *words = [[self componentsSeparatedByString: @" "] filteredArrayUsingPredicate:noEmptyStrings];
